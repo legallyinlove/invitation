@@ -101,7 +101,7 @@ const originalSvg = (fileName: string) => asset(`original-svg/${fileName}`);
 export const inviteConfig: InviteConfig = {
   assetsBase: 'assets/invite',
   music: asset('October.mp3'),
-  icon: asset('OctIcon.webp'),
+  icon: originalSvg('Gemini_Generated_Image_wu260nwu260nwu26.svg'),
   couple: {
     groom: 'Віталій',
     bride: 'Юліанна',
@@ -195,7 +195,7 @@ export const inviteConfig: InviteConfig = {
     },
   },
   end: {
-    image: asset('end.webp'),
+    image: originalSvg('Gemini_Generated_Image_aczyvjaczyvjaczy.svg'),
     firstLine: 'З любов’ю,',
     secondLine: 'Віталій та Юлія',
     noteFirstLine: 'Ви особливий гість для нас!',

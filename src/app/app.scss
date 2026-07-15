@@ -135,6 +135,13 @@ a {
 .envelope__icon {
   display: none;
 }
+.envelope__base,
+.envelope__flap {
+  filter:
+    drop-shadow(0 1px 0 rgba(255, 253, 246, 0.22))
+    drop-shadow(0 -1px 0 rgba(224, 197, 144, 0.16))
+    drop-shadow(0 10px 14px rgba(0, 0, 0, 0.34));
+}
 
 .invite-shell--opened .envelope__icon {
   opacity: 0;
@@ -591,13 +598,17 @@ a {
 
 .quote {
   width: 317px;
+  min-height: 122px;
   max-width: 100%;
   position: absolute;
   left: 50%;
   bottom: 92px;
   z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 0;
-  padding: 0 22px;
+  padding: 4px 30px 0;
   color: var(--cream);
   transform: translateX(-50%) translateY(38px) scale(0.96);
 }
