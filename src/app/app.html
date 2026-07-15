@@ -1,0 +1,170 @@
+<audio #audioRef [src]="invite.music" preload="auto" loop></audio>
+
+<main class="invite-shell" [class.invite-shell--opened]="opened" [class.invite-shell--fonts-ready]="fontsReady">
+  <section class="envelope-screen" [class.envelope-screen--opened]="opened" aria-label="Відкрити запрошення">
+    <div class="envelope-copy">
+      <p>
+        <span>{{ invite.hero.eyebrow.split(' ')[0] }}</span>
+        <span>{{ invite.hero.eyebrow.split(' ').slice(1).join(' ') }}</span>
+      </p>
+      <strong>{{ invite.hero.script }}</strong>
+    </div>
+
+    <div class="envelope">
+      <img class="envelope__icon" [src]="asset('OctIcon.webp')" alt="">
+      <img class="envelope__base" [src]="asset('OctC1.webp')" alt="">
+      <div class="envelope__paper">
+        <p>{{ invite.hero.intro }}</p>
+      </div>
+      <img class="envelope__flap" [src]="asset('OctC2.webp')" alt="">
+      <button class="seal" type="button" (click)="openInvite()" [attr.aria-label]="invite.hero.button">
+        <img [src]="asset('OctoB.webp')" alt="">
+      </button>
+    </div>
+  </section>
+
+  <section id="invite-start" class="section section--first">
+    <div class="mobile-frame">
+      <button class="music-button" type="button" (click)="toggleMusic()" [attr.aria-label]="isMuted ? 'Увімкнути музику' : 'Вимкнути музику'">
+        <img [src]="asset(isMuted ? 'original-svg/music-play.svg' : 'original-svg/music-pause.svg')" alt="">
+      </button>
+
+      <div class="ornate-card">
+        <img class="ornate-card__shape" [src]="asset('original-svg/first-card.svg')" alt="">
+        <div class="ornate-card__content">
+          <div class="names">
+            <span class="name name--groom" data-reveal="cover-groom" [class.reveal--visible]="isVisible('cover-groom')">{{ invite.couple.groom }}</span>
+            <small>{{ invite.couple.ampersand }}</small>
+            <span class="name name--bride" data-reveal="cover-bride" [class.reveal--visible]="isVisible('cover-bride')">{{ invite.couple.bride }}</span>
+          </div>
+          <p>{{ invite.hero.cardIntro }}</p>
+          <div class="date-stack">
+            <span class="date-part" data-reveal="cover-day" [class.reveal--visible]="isVisible('cover-day')">{{ invite.date.day }}</span>
+            <i></i>
+            <span class="date-part" data-reveal="cover-month" [class.reveal--visible]="isVisible('cover-month')">{{ invite.date.month }}</span>
+            <i></i>
+            <span class="date-part" data-reveal="cover-year" [class.reveal--visible]="isVisible('cover-year')">{{ invite.date.year }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="intro reveal" data-reveal="intro" [class.reveal--visible]="isVisible('intro')">
+        <h1>{{ invite.intro.title }}</h1>
+        @for (line of invite.intro.text; track line) {
+          <p>{{ line }}</p>
+        }
+      </div>
+
+      <div class="calendar reveal" data-reveal="calendar" [class.reveal--visible]="isVisible('calendar')">
+        <h2>{{ invite.date.monthTitle }}</h2>
+        <div class="calendar-art">
+          <img class="calendar-art__grid" [src]="asset('original-svg/calendar.svg')" alt="">
+          <img class="calendar-art__heart" [src]="asset('original-svg/calendar-heart.svg')" alt="">
+        </div>
+        <p>{{ invite.date.caption }}</p>
+      </div>
+
+      <div class="location reveal" data-reveal="location" [class.reveal--visible]="isVisible('location')">
+        <img class="location-art" [src]="invite.location.art" alt="">
+        <strong>{{ invite.location.name }}</strong>
+        <p>{{ invite.location.address }}</p>
+        <a class="outline-button" [href]="invite.location.mapUrl" target="_blank" rel="noopener">{{ invite.location.mapLabel }}</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--timing">
+    <div class="mobile-frame">
+      <h2 class="script-title reveal" data-reveal="timing-title" [class.reveal--visible]="isVisible('timing-title')">{{ invite.timing.title }}</h2>
+      <div class="timeline">
+        <img class="timeline-line" [src]="invite.timing.line" alt="">
+        @for (item of invite.timing.items; track item.time; let index = $index) {
+          <article class="timeline-item">
+            <img class="timeline-icon reveal-icon" [attr.data-reveal]="'timing-icon-' + index" [class.reveal--visible]="isVisible('timing-icon-' + index)" [src]="item.icon" alt="">
+            <p class="reveal-label" [attr.data-reveal]="'timing-label-' + index" [class.reveal--visible]="isVisible('timing-label-' + index)">{{ item.label }}</p>
+            <span class="reveal-time" [attr.data-reveal]="'timing-time-' + index" [class.reveal--visible]="isVisible('timing-time-' + index)">{{ item.time }}</span>
+          </article>
+        }
+        <p class="quote reveal" data-reveal="timing-note" [class.reveal--visible]="isVisible('timing-note')">{{ invite.timing.note }}</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dress">
+    <div class="mobile-frame">
+      <h2 class="script-title reveal" data-reveal="dress-title" [class.reveal--visible]="isVisible('dress-title')">{{ invite.dressCode.title }}</h2>
+      <p class="section-text">{{ invite.dressCode.text }}</p>
+      <div class="palette" aria-label="Палітра дрес-коду">
+        @for (image of invite.dressCode.paletteImages; track image) {
+          <img [src]="asset(image)" alt="">
+        }
+      </div>
+      <p class="gold-text">{{ invite.dressCode.girlsTitle }}</p>
+      <p class="section-text">{{ invite.dressCode.girlsText }}</p>
+      <p class="gold-text gold-text--spaced">{{ invite.dressCode.boysTitle }}</p>
+      <p class="section-text">{{ invite.dressCode.boysText }}</p>
+      <p class="gold-text gold-text--spaced">{{ invite.dressCode.inspirationTitle }}</p>
+      <div class="dress-grid">
+        @for (image of invite.dressCode.images; track image; let index = $index) {
+          <img class="reveal" [attr.data-reveal]="'dress-' + index" [class.reveal--visible]="isVisible('dress-' + index)" [src]="asset(image)" alt="">
+        }
+      </div>
+      <img class="rings-art" [src]="asset('original-svg/rings.svg')" alt="">
+    </div>
+  </section>
+
+  <section class="section section--wishes">
+    <div class="mobile-frame">
+      <h2 class="script-title reveal" data-reveal="wishes-title" [class.reveal--visible]="isVisible('wishes-title')">{{ invite.wishes.title }}</h2>
+      @for (item of invite.wishes.items; track item; let index = $index) {
+        <strong class="wish-number" [class.wish-number--even]="index === 1" [attr.data-reveal]="'wish-number-' + index" [class.reveal--visible]="isVisible('wish-number-' + index)">{{ index + 1 }}</strong>
+        <p class="section-text wish-text" [attr.data-reveal]="'wish-text-' + index" [class.reveal--visible]="isVisible('wish-text-' + index)">{{ item }}</p>
+        @if (index === 1) {
+          <a class="contact reveal" data-reveal="contact" [class.reveal--visible]="isVisible('contact')" [href]="invite.wishes.phoneUrl">
+            <span class="contact__number">{{ invite.wishes.contactPhone }}</span>
+            <span class="contact__dash">-</span>
+            <span class="contact__name">{{ invite.wishes.contactName }}</span>
+          </a>
+        }
+      }
+    </div>
+  </section>
+
+  <section class="section section--rsvp">
+    <div class="mobile-frame">
+      <a class="outline-button" [href]="invite.rsvp.formUrl" target="_blank" rel="noopener">{{ invite.rsvp.button }}</a>
+    </div>
+  </section>
+
+  <section class="section section--end">
+    <div class="mobile-frame">
+      <div class="telegram-card">
+        <img class="end-image" [src]="invite.end.image" alt="">
+        <div class="telegram-card__content">
+          <p>{{ invite.telegram.text }}</p>
+          <a class="telegram" [href]="invite.telegram.buttonUrl" target="_blank" rel="noopener" aria-label="Telegram">
+            <img [src]="asset('original-svg/telegram-button.svg')" alt="">
+          </a>
+        </div>
+      </div>
+      <h2 class="script-title reveal" data-reveal="countdown-title" [class.reveal--visible]="isVisible('countdown-title')">{{ invite.countdown.title }}</h2>
+      <div class="countdown">
+        <span [attr.data-title]="invite.countdown.labels.days">{{ countdown.days }}</span>
+        <span [attr.data-title]="invite.countdown.labels.hours">{{ countdown.hours }}</span>
+        <span [attr.data-title]="invite.countdown.labels.minutes">{{ countdown.minutes }}</span>
+        <span [attr.data-title]="invite.countdown.labels.seconds">{{ countdown.seconds }}</span>
+      </div>
+      <div class="final-card">
+        <img class="final-card__shape" [src]="asset('original-svg/final-card.svg')" alt="">
+        <div class="final-card__content">
+          <p class="reveal" data-reveal="final-1" [class.reveal--visible]="isVisible('final-1')">{{ invite.end.firstLine }}</p>
+          <p class="reveal" data-reveal="final-2" [class.reveal--visible]="isVisible('final-2')">{{ invite.end.secondLine }}</p>
+        </div>
+      </div>
+      <p class="end-note" data-reveal="end-note" [class.reveal--visible]="isVisible('end-note') || isVisible('final-2')">
+        <span class="end-note__line end-note__line--first">{{ invite.end.noteFirstLine }}</span>
+        <span class="end-note__line end-note__line--second">{{ invite.end.noteSecondLine }}</span>
+      </p>
+    </div>
+  </section>
+</main>

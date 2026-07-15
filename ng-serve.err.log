@@ -1,0 +1,63 @@
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './invite.config' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.ts:2:29:
+[37m      2 │ import { inviteConfig } from [32m'./invite.config'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./invite.config"[0m
+
+    src/app/app.ts:2:29:
+[37m      2 │ import { inviteConfig } from [32m'./invite.config'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './invite.config' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.ts:2:29:
+[37m      2 │ import { inviteConfig } from [32m'./invite.config'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./invite.config"[0m
+
+    src/app/app.ts:2:29:
+[37m      2 │ import { inviteConfig } from [32m'./invite.config'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'prepareCriticalFonts' does not exist on type 'App'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.ts:36:9:
+[37m      36 │     this.[32mprepareCriticalFonts[37m();
+         ╵          [32m~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './invite.config' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.ts:2:29:
+[37m      2 │ import { inviteConfig } from [32m'./invite.config'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./invite.config"[0m
+
+    src/app/app.ts:2:29:
+[37m      2 │ import { inviteConfig } from [32m'./invite.config'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2307: Cannot find module './invite.config' or its corresponding type declarations.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/app.ts:2:29:
+[37m      2 │ import { inviteConfig } from [32m'./invite.config'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mCould not resolve "./invite.config"[0m
+
+    src/app/app.ts:2:29:
+[37m      2 │ import { inviteConfig } from [32m'./invite.config'[37m;
+        ╵                              [32m~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m

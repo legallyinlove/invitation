@@ -1,0 +1,126 @@
+@font-face {
+  font-family: "__snellRoundhand_2893b4";
+  src: url("/assets/invite/7b6d214297686add-s.p.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "__snellRoundhand_Fallback_2893b4";
+  src: local("Arial");
+  ascent-override: 115.38%;
+  descent-override: 39.90%;
+  line-gap-override: 0.00%;
+  size-adjust: 81.21%;
+}
+
+@font-face {
+  font-family: "__Cormorant_Garamond_c54468";
+  src: url("/assets/invite/f2b90c6913848529-s.p.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "__Cormorant_Garamond_Fallback_c54468";
+  src: local("Times New Roman");
+  ascent-override: 94.99%;
+  descent-override: 29.50%;
+  line-gap-override: 0.00%;
+  size-adjust: 97.27%;
+}
+
+@font-face {
+  font-family: "__Cormorant_Infant_e41b6c";
+  src: url("/assets/invite/30c03029375ec04e-s.p.woff2") format("woff2");
+  font-weight: 500;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "__Cormorant_Infant_Fallback_e41b6c";
+  src: local("Times New Roman");
+  ascent-override: 93.55%;
+  descent-override: 29.06%;
+  line-gap-override: 0.00%;
+  size-adjust: 98.77%;
+}
+
+@font-face {
+  font-family: "__Cormorant_Infant_9acfe2";
+  src: url("/assets/invite/35a33ee4ebe6e6a3-s.p.woff2") format("woff2");
+  font-weight: 600;
+  font-style: normal;
+  font-display: block;
+}
+
+@font-face {
+  font-family: "__Cormorant_Infant_Fallback_9acfe2";
+  src: local("Times New Roman");
+  ascent-override: 93.55%;
+  descent-override: 29.06%;
+  line-gap-override: 0.00%;
+  size-adjust: 98.77%;
+}
+
+@font-face {
+  font-family: "__Montserrat_24bc0b";
+  src: url("/assets/invite/904be59b21bd51cb-s.p.woff2") format("woff2");
+  font-weight: 200 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "__Montserrat_Fallback_24bc0b";
+  src: local("Arial");
+  ascent-override: 84.95%;
+  descent-override: 22.03%;
+  line-gap-override: 0.00%;
+  size-adjust: 113.95%;
+}
+
+html {
+  min-height: 100%;
+  background: #fffdf6;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background: #fffdf6;
+  scrollbar-width: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  display: none;
+}
+
+html.invite-locked,
+html.invite-locked body {
+  height: 100%;
+  overflow: hidden;
+}
+
+:root {
+  --fontSnellRoundhand: "__snellRoundhand_2893b4", "__snellRoundhand_Fallback_2893b4";
+  --fontCormorantGaramond: "__Cormorant_Garamond_c54468", "__Cormorant_Garamond_Fallback_c54468";
+  --fontCormorantInfant: "__Cormorant_Infant_e41b6c", "__Cormorant_Infant_Fallback_e41b6c";
+  --fontCormorantInfant600: "__Cormorant_Infant_9acfe2", "__Cormorant_Infant_Fallback_9acfe2";
+  --fontFamilyMontserrat: "__Montserrat_24bc0b", "__Montserrat_Fallback_24bc0b";
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
