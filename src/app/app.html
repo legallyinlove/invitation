@@ -1,4 +1,4 @@
-<audio #audioRef [src]="invite.music" preload="auto" loop></audio>
+﻿<audio #audioRef [src]="invite.music" preload="auto" loop></audio>
 
 <main class="invite-shell" [class.invite-shell--opened]="opened" [class.invite-shell--fonts-ready]="fontsReady">
   <section class="envelope-screen" [class.envelope-screen--opened]="opened" aria-label="Відкрити запрошення">
@@ -6,8 +6,8 @@
       <p>
         <span>{{ invite.hero.eyebrow.split(' ')[0] }}</span>
         <span>{{ invite.hero.eyebrow.split(' ').slice(1).join(' ') }}</span>
+        <span>{{ invite.hero.script }}</span>
       </p>
-      <strong>{{ invite.hero.script }}</strong>
     </div>
 
     <div class="envelope">
@@ -60,6 +60,7 @@
         <div class="calendar-art">
           <img class="calendar-art__grid" [src]="asset('original-svg/calendar.svg')" alt="">
           <img class="calendar-art__heart" [src]="asset('original-svg/calendar-heart.svg')" alt="">
+          <span class="calendar-art__day">29</span>
         </div>
         <p>{{ invite.date.caption }}</p>
       </div>

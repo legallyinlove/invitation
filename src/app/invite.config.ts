@@ -1,4 +1,4 @@
-export interface InviteConfig {
+﻿export interface InviteConfig {
   assetsBase: string;
   music: string;
   icon: string;
@@ -95,11 +95,11 @@ export interface InviteConfig {
   };
 }
 
-const asset = (fileName: string) => `/assets/invite/${fileName}`;
+const asset = (fileName: string) => `assets/invite/${fileName}`;
 const originalSvg = (fileName: string) => asset(`original-svg/${fileName}`);
 
 export const inviteConfig: InviteConfig = {
-  assetsBase: '/assets/invite',
+  assetsBase: 'assets/invite',
   music: asset('October.mp3'),
   icon: asset('OctIcon.webp'),
   couple: {
@@ -136,14 +136,14 @@ export const inviteConfig: InviteConfig = {
     name: 'Бобриця Дача',
     address: 'вулиця Козацька, 77, Бобриця, Київська область',
     mapLabel: 'показати на карті',
-    mapUrl: 'https://maps.app.goo.gl/z9jGc84Ty1brQY8L6',
-    art: originalSvg('location-building.svg'),
+    mapUrl: 'https://maps.app.goo.gl/rZ5xUzxnHExDatnL7',
+    art: originalSvg('Gemini_Generated_Image_v36b0yv36b0yv36b.svg'),
   },
   timing: {
     title: 'Таймінг',
     line: originalSvg('timing-line.svg'),
     items: [
-      { time: '12:00', label: 'Збір гостей', icon: originalSvg('timing-guests.svg') },
+      { time: '12:00', label: 'Збір гостей', icon: originalSvg('Gemini_Generated_Image_3a5fj63a5fj63a5f.svg') },
       { time: '13:00', label: 'Церемонія', icon: originalSvg('timing-ceremony.svg') },
       { time: '15:00', label: 'Банкет', icon: originalSvg('timing-banquet.svg') },
       { time: '19:00', label: 'Торт', icon: originalSvg('timing-cake.svg') },
@@ -154,7 +154,7 @@ export const inviteConfig: InviteConfig = {
   dressCode: {
     title: 'Дрес-код',
     text: 'Будемо дуже вдячні, якщо ви підтримаєте стиль і колір нашого весілля у своїх образах',
-    colors: ['#354d37', '#566247', '#a9b298', '#d6dec5', '#24140f', '#4a2d20', '#9c8b78', '#ead8c4'],
+    colors: ['#010e30', '#566247', '#a9b298', '#d6dec5', '#24140f', '#4a2d20', '#9c8b78', '#ead8c4'],
     paletteImages: ['oct1.webp', 'oct2.webp', 'oct3.webp', 'oct4.webp', 'oct5.webp', 'oct6.webp', 'oct7.webp', 'oct8.webp'],
     paletteHint: '',
     girlsTitle: 'Для дівчат:',

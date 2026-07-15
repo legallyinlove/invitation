@@ -1,12 +1,16 @@
 {
   "name": "wedding-invite",
-  "version": "0.0.0",
+  "homepage": "https://LanchevychMaxym.github.io/WeddingInvite",
+  "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
+    "build:gh-pages": "ng build --base-href /WeddingInvite/",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "predeploy": "npm run build:gh-pages",
+    "deploy": "gh-pages -d dist/WeddingInvite/browser"
   },
   "private": true,
   "dependencies": {
@@ -31,6 +35,7 @@
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.8.2"
+    "typescript": "~5.8.2",
+    "gh-pages": "^6.3.0"
   }
 }
