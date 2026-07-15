@@ -33,9 +33,9 @@
         <img class="ornate-card__shape" [src]="asset('original-svg/first-card.svg')" alt="">
         <div class="ornate-card__content">
           <div class="names">
-            <span class="name name--groom" data-reveal="cover-groom" [class.reveal--visible]="isVisible('cover-groom')">{{ invite.couple.groom }}</span>
+            <span class="name name--groom" data-reveal="cover-groom" [class.reveal--visible]="isVisible('cover-groom')">{{ invite.couple.bride }}</span>
             <small>{{ invite.couple.ampersand }}</small>
-            <span class="name name--bride" data-reveal="cover-bride" [class.reveal--visible]="isVisible('cover-bride')">{{ invite.couple.bride }}</span>
+            <span class="name name--bride" data-reveal="cover-bride" [class.reveal--visible]="isVisible('cover-bride')">{{ invite.couple.groom }}</span>
           </div>
           <p>{{ invite.hero.cardIntro }}</p>
           <div class="date-stack">

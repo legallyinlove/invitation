@@ -103,8 +103,8 @@ export const inviteConfig: InviteConfig = {
   music: asset('October.mp3'),
   icon: originalSvg('Gemini_Generated_Image_wu260nwu260nwu26.svg'),
   couple: {
-    groom: 'Віталій',
-    bride: 'Юліанна',
+    groom: 'Назар',
+    bride: 'Валентина',
     ampersand: '&',
   },
   hero: {
@@ -133,8 +133,8 @@ export const inviteConfig: InviteConfig = {
   },
   location: {
     title: 'Локація',
-    name: 'Бобриця Дача',
-    address: 'вулиця Козацька, 77, Бобриця, Київська область',
+    name: 'Ресторан "Рафаель"',
+    address: 'вулиця Івана Гонти, 1а, Зубра, Львівська область',
     mapLabel: 'показати на карті',
     mapUrl: 'https://maps.app.goo.gl/rZ5xUzxnHExDatnL7',
     art: originalSvg('Gemini_Generated_Image_v36b0yv36b0yv36b.svg'),
@@ -195,9 +195,9 @@ export const inviteConfig: InviteConfig = {
     },
   },
   end: {
-    image: originalSvg('Gemini_Generated_Image_aczyvjaczyvjaczy.svg'),
+    image: asset('letter.png'),
     firstLine: 'З любов’ю,',
-    secondLine: 'Віталій та Юлія',
+    secondLine: 'Валентина та Назар',
     noteFirstLine: 'Ви особливий гість для нас!',
     noteSecondLine: 'До зустрічі!',
     note: 'Ви особливий гість для нас! До зустрічі!',
