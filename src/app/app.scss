@@ -424,36 +424,54 @@ a {
   width: 322px;
   margin: 0 auto;
   z-index: 20;
+  user-select: none;
 }
 
 .calendar-art__grid {
   position: relative;
   z-index: 20;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
   width: 322px;
-  height: auto;
-}
-
-.calendar-art__heart {
-  position: absolute;
-  top: 41px;
-  left: 234.5px;
-  z-index: 10;
-  width: 45px;
-  height: auto;
-  animation: heartPulse 2s ease-in-out infinite;
-}
-.calendar-art__day {
-  position: absolute;
-  top: 61px;
-  left: 257px;
-  z-index: 30;
-  color: var(--cream);
+  padding-top: 6px;
+  color: var(--deep-green);
   font-family: var(--fontCormorantGaramond);
   font-size: 20px;
   line-height: 1;
-  transform: translate(-50%, -50%);
-  pointer-events: none;
+}
+
+.calendar-art__row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  align-items: center;
+  text-align: center;
+}
+
+.calendar-art__row span {
+  position: relative;
+  display: flex;
+  min-width: 0;
+  min-height: 45px;
+  align-items: center;
+  justify-content: center;
+}
+
+.calendar-art__selected-day {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--cream);
+  z-index: 1;
+}
+
+.calendar-art__selected-day::before {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background: url("/assets/invite/original-svg/calendar-heart.svg") center / 45px auto no-repeat;
+  content: "";
+  animation: heartPulse 2s ease-in-out infinite;
 }
 
 .location strong {
