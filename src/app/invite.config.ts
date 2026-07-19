@@ -3,6 +3,7 @@
   music: string;
   icon: string;
   couple: {
+    image?: string;
     groom: string;
     bride: string;
     ampersand: string;
@@ -102,6 +103,7 @@ export const inviteConfig: InviteConfig = {
   music: asset('October.mp3'),
   icon: originalSvg('Gemini_Generated_Image_wu260nwu260nwu26.svg'),
   couple: {
+    image: originalSvg('legally-in-love.jpg'),
     groom: 'Назар',
     bride: 'Валентина',
     ampersand: '&',

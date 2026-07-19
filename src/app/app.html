@@ -32,11 +32,25 @@
       <div class="ornate-card">
         <img class="ornate-card__shape" [src]="asset('original-svg/first-card.svg')" alt="">
         <div class="ornate-card__content">
-          <div class="names">
-            <span class="name name--groom" data-reveal="cover-groom" [class.reveal--visible]="isVisible('cover-groom')">{{ invite.couple.bride }}</span>
-            <small>{{ invite.couple.ampersand }}</small>
-            <span class="name name--bride" data-reveal="cover-bride" [class.reveal--visible]="isVisible('cover-bride')">{{ invite.couple.groom }}</span>
-          </div>
+          @if (invite.couple.image) {
+            <div
+              class="couple-image-wrap reveal"
+              data-reveal="cover-couple-image"
+              [class.reveal--visible]="isVisible('cover-couple-image')"
+            >
+              <img
+                class="couple-image"
+                [src]="invite.couple.image"
+                [alt]="'Монограма ' + invite.couple.bride + ' та ' + invite.couple.groom"
+              >
+            </div>
+          } @else {
+            <div class="names">
+              <span class="name name--groom" data-reveal="cover-groom" [class.reveal--visible]="isVisible('cover-groom')">{{ invite.couple.bride }}</span>
+              <small>{{ invite.couple.ampersand }}</small>
+              <span class="name name--bride" data-reveal="cover-bride" [class.reveal--visible]="isVisible('cover-bride')">{{ invite.couple.groom }}</span>
+            </div>
+          }
           <p>{{ invite.hero.cardIntro }}</p>
           <div class="date-stack">
             <span class="date-part" data-reveal="cover-day" [class.reveal--visible]="isVisible('cover-day')">{{ invite.date.day }}</span>

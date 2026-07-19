@@ -300,6 +300,23 @@ a {
   line-height: 50px;
 }
 
+.couple-image-wrap {
+  display: block;
+  width: 230px;
+  height: 230px;
+  margin: -20px auto -60px;
+  background: var(--deep-green);
+}
+
+.couple-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: invert(1);
+  mix-blend-mode: screen;
+}
+
 .name {
   opacity: 0;
   transition: opacity 2s ease-out, transform 2s ease-out;
