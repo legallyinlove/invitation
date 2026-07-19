@@ -42,6 +42,7 @@
     items: Array<{
       time: string;
       label: string;
+      description?: string;
       icon: string;
     }>;
     note: string;
@@ -52,19 +53,17 @@
     colors: string[];
     paletteImages: string[];
     paletteHint: string;
-    girlsTitle: string;
-    girlsText: string;
-    boysTitle: string;
-    boysText: string;
-    inspirationTitle: string;
-    images: string[];
   };
   wishes: {
     title: string;
-    items: string[];
-    contactName: string;
-    contactPhone: string;
-    phoneUrl: string;
+    items: Array<{
+      text: string;
+      details?: {
+        text: string;
+        phone: string;
+        phoneUrl: string;
+      };
+    }>;
   };
   rsvp: {
     title: string;
@@ -122,18 +121,18 @@ export const inviteConfig: InviteConfig = {
     monthTitle: 'Вересень, 2026',
     calendarDays: ['7', '8', '9', '10', '11', '12', '13'],
     selectedDay: '12',
-    caption: '- день, коли наша любов стане родиною',
+    caption: '- день, коли набере чинності наш Закон любові',
   },
   intro: {
     title: 'Дорогі гості!',
     text: [
-      'Запрошуємо вас на наше весілля!',
-      'Нам буде дуже приємно, якщо в цей особливий день ви зможете бути поруч',
+      'Запрошуємо Вас на наше весілля!',
+      'Нам буде дуже приємно, якщо в цей особливий день Ви зможете бути поруч',
     ],
   },
   location: {
     title: 'Локація',
-    name: 'Ресторан "Рафаель"',
+    name: 'Ресторан «Рафаель»',
     address: 'вулиця Івана Гонти, 1а, Зубра, Львівська область',
     mapLabel: 'показати на карті',
     mapUrl: 'https://maps.app.goo.gl/rZ5xUzxnHExDatnL7',
@@ -143,47 +142,59 @@ export const inviteConfig: InviteConfig = {
     title: 'Таймінг',
     line: originalSvg('timing-line.svg'),
     items: [
-      { time: '12:00', label: 'Збір гостей', icon: originalSvg('Gemini_Generated_Image_3a5fj63a5fj63a5f.svg') },
-      { time: '13:00', label: 'Церемонія', icon: originalSvg('timing-ceremony.svg') },
-      { time: '15:00', label: 'Банкет', icon: originalSvg('timing-banquet.svg') },
-      { time: '19:00', label: 'Торт', icon: originalSvg('timing-cake.svg') },
-      { time: '21:00', label: 'Завершення', icon: originalSvg('timing-finish.svg') },
+      {
+        time: '12:00',
+        label: 'Вінчання',
+        description: 'Церква Архистратига Михаїла (м. Львів, вул. Винниченка, 22)',
+        icon: originalSvg('Gemini_Generated_Image_3a5fj63a5fj63a5f.svg'),
+      },
+      { time: '14:00', label: 'Церемонія', icon: originalSvg('timing-ceremony.svg') },
+      { time: '15:30', label: 'Банкет', icon: originalSvg('timing-banquet.svg') },
+      { time: '20:00', label: 'Торт', icon: originalSvg('timing-cake.svg') },
+      {
+        time: '23:00',
+        label: 'Завершення',
+        description: 'Офіційно - 23:00, неофіційно – до останнього гостя',
+        icon: originalSvg('timing-finish.svg'),
+      },
     ],
-    note: '«Любов - це коли двоє дивляться не одне на одного, а в одному напрямку.»',
+    note: '«Любов – це коли де-факто Вас двоє, а де-юре – Ви одне ціле.»',
   },
   dressCode: {
     title: 'Дрес-код',
-    text: 'Будемо дуже вдячні, якщо ви підтримаєте стиль і колір нашого весілля у своїх образах',
+    text: 'Кожен гість у своєму образі має право використати наступні кольори:',
     colors: ['#010e30', '#566247', '#a9b298', '#d6dec5', '#24140f', '#4a2d20', '#9c8b78', '#ead8c4'],
     paletteImages: ['oct1.webp', 'oct2.webp', 'oct3.webp', 'oct4.webp', 'oct5.webp', 'oct6.webp', 'oct7.webp', 'oct8.webp'],
     paletteHint: '',
-    girlsTitle: 'Для дівчат:',
-    girlsText: 'Вечірні або коктейльні сукні у запропонованих відтінках. Також можна обрати елегантні корсети, спідниці чи костюми. Просимо утриматися від білого кольору та яскравих неонових відтінків.',
-    boysTitle: 'Для хлопців:',
-    boysText: 'Класичні костюми чорного або відтінків темного кольору. Доречними будуть смокінги, жилети, світлі сорочки або поло',
-    inspirationTitle: 'Приклади для натхнення',
-    images: ['ocl1.webp', 'ocl2.webp', 'ocl3.webp', 'ocl4.webp', 'ocl5.webp', 'ocl6.webp'],
   },
   wishes: {
-    title: 'Побажання',
+    title: 'Декілька важливих правил',
     items: [
-      'Ми вирушаємо у весільну подорож одразу після святкування, тож, на жаль, квіти не зможуть поїхати з нами. Натомість будемо раді конверту і вашій щирій усмішці!',
-      'Якщо у вас виникнуть будь-які запитання, побажання або пропозиції щодо нашого свята, будь ласка, звертайтеся до нашого організатора. Вона з радістю допоможе вам:',
-      'Будь ласка, заповніть анкету за посиланням - це значно полегшить нам організацію і зробить свято ще затишнішим',
+      {
+        text: 'На відміну від наших почуттів, квіти зів’януть вже за тиждень. Натомість пляшка хорошого алкоголю простоїть роками і  одного вечора підігріє наші почуття, а можливо – і Ваші також. Зробіть так, щоб у нашій молодій сім’ї приставка «міні» в слові «міні-бар» була лише формальністю.',
+      },
+      {
+        text: 'Правила створені для того, щоб їх порушувати, тим більше, коли на святі стільки юристів. 23:00 – це не межа Ваших можливостей.',
+        details: {
+          text: 'P.S. Для комфортного продовження свята, рекомендуємо заздалегідь подбати про нічний транспорт додому або забронювати номери в готелі:',
+          phone: '+38 (067) 672 55 42',
+          phoneUrl: 'tel:+380676725542',
+        },
+      },
+      {
+        text: 'Будь ласка, заповніть анкету за посиланням - це значно полегшить нам організацію і зробить свято ще затишнішим',
+      },
     ],
-    contactName: 'Юлія',
-    contactPhone: '+38 073 487 7835',
-    phoneUrl: 'tel:+380734877835',
   },
   rsvp: {
     title: '',
     text: '',
     button: 'заповнити',
-    formUrl: 'https://docs.google.com/forms/d/e/1FAIpQLScSKDOK8QAnu30LUzz6XYBM5XhCnFBxW1f_gQorSvgC7r4cgg/viewform',
+    formUrl: 'https://forms.gle/uJwziwwvxJEevgQP9',
   },
   telegram: {
-    text: 'Переходьте до спільного чату в Telegram — там можна ділитися враженнями, фото та відео з весілля',
-    buttonUrl: 'https://t.me/foreventua',
+    text: 'Переходьте до спільного чату в Telegram – там буде багато цікавого до, під час та після весілля!',
+    buttonUrl: 'https://youtu.be/M_CaAD8HhSA?si=xbdHSEqxPr8BbrfL&t=170',
   },
   countdown: {
     title: 'Ми скажемо "так" через...',

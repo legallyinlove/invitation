@@ -94,9 +94,12 @@
       <div class="timeline">
         <img class="timeline-line" [src]="invite.timing.line" alt="">
         @for (item of invite.timing.items; track item.time; let index = $index) {
-          <article class="timeline-item">
+          <article class="timeline-item" [class.timeline-item--detailed]="item.description">
             <img class="timeline-icon reveal-icon" [attr.data-reveal]="'timing-icon-' + index" [class.reveal--visible]="isVisible('timing-icon-' + index)" [src]="item.icon" alt="">
             <p class="reveal-label" [attr.data-reveal]="'timing-label-' + index" [class.reveal--visible]="isVisible('timing-label-' + index)">{{ item.label }}</p>
+            @if (item.description) {
+              <p class="timeline-description reveal-description" [attr.data-reveal]="'timing-description-' + index" [class.reveal--visible]="isVisible('timing-description-' + index)">{{ item.description }}</p>
+            }
             <span class="reveal-time" [attr.data-reveal]="'timing-time-' + index" [class.reveal--visible]="isVisible('timing-time-' + index)">{{ item.time }}</span>
           </article>
         }
@@ -114,16 +117,6 @@
           <img [src]="asset(image)" alt="">
         }
       </div>
-      <p class="gold-text">{{ invite.dressCode.girlsTitle }}</p>
-      <p class="section-text">{{ invite.dressCode.girlsText }}</p>
-      <p class="gold-text gold-text--spaced">{{ invite.dressCode.boysTitle }}</p>
-      <p class="section-text">{{ invite.dressCode.boysText }}</p>
-      <p class="gold-text gold-text--spaced">{{ invite.dressCode.inspirationTitle }}</p>
-      <div class="dress-grid">
-        @for (image of invite.dressCode.images; track image; let index = $index) {
-          <img class="reveal" [attr.data-reveal]="'dress-' + index" [class.reveal--visible]="isVisible('dress-' + index)" [src]="asset(image)" alt="">
-        }
-      </div>
       <img class="rings-art" [src]="asset('original-svg/rings.svg')" alt="">
     </div>
   </section>
@@ -133,13 +126,12 @@
       <h2 class="script-title reveal" data-reveal="wishes-title" [class.reveal--visible]="isVisible('wishes-title')">{{ invite.wishes.title }}</h2>
       @for (item of invite.wishes.items; track item; let index = $index) {
         <strong class="wish-number" [class.wish-number--even]="index === 1" [attr.data-reveal]="'wish-number-' + index" [class.reveal--visible]="isVisible('wish-number-' + index)">{{ index + 1 }}</strong>
-        <p class="section-text wish-text" [attr.data-reveal]="'wish-text-' + index" [class.reveal--visible]="isVisible('wish-text-' + index)">{{ item }}</p>
-        @if (index === 1) {
-          <a class="contact reveal" data-reveal="contact" [class.reveal--visible]="isVisible('contact')" [href]="invite.wishes.phoneUrl">
-            <span class="contact__number">{{ invite.wishes.contactPhone }}</span>
-            <span class="contact__dash">-</span>
-            <span class="contact__name">{{ invite.wishes.contactName }}</span>
-          </a>
+        <p class="section-text wish-text" [attr.data-reveal]="'wish-text-' + index" [class.reveal--visible]="isVisible('wish-text-' + index)">{{ item.text }}</p>
+        @if (item.details) {
+          <p class="section-text wish-details reveal" [attr.data-reveal]="'wish-details-' + index" [class.reveal--visible]="isVisible('wish-details-' + index)">
+            {{ item.details.text }}
+            <a class="wish-details__phone" [href]="item.details.phoneUrl">{{ item.details.phone }}</a>
+          </p>
         }
       }
     </div>
