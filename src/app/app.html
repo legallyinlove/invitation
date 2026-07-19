@@ -4,9 +4,9 @@
   <section class="envelope-screen" [class.envelope-screen--opened]="opened" aria-label="Відкрити запрошення">
     <div class="envelope-copy">
       <p>
-        <span>{{ invite.hero.eyebrow.split(' ')[0] }}</span>
-        <span>{{ invite.hero.eyebrow.split(' ').slice(1).join(' ') }}</span>
-        <span>{{ invite.hero.script }}</span>
+        <span class="envelope-copy__script">{{ invite.hero.eyebrow.split(' ')[0] }}</span>
+        <span class="envelope-copy__script">{{ invite.hero.eyebrow.split(' ').slice(1).join(' ') }}</span>
+        <span class="envelope-copy__script">{{ invite.hero.script }}</span>
       </p>
     </div>
 
