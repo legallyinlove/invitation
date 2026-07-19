@@ -66,7 +66,12 @@
             </div>
             <div class="calendar-art__row calendar-art__row--days">
               @for (day of invite.date.calendarDays; track day) {
-                <span [class.calendar-art__selected-day]="day === invite.date.selectedDay">{{ day }}</span>
+                <span [class.calendar-art__selected-day]="day === invite.date.selectedDay">
+                  @if (day === invite.date.selectedDay) {
+                    <img class="calendar-art__heart" [src]="asset('original-svg/calendar-heart.svg')" alt="">
+                  }
+                  <span class="calendar-art__day-label">{{ day }}</span>
+                </span>
               }
             </div>
           </div>
