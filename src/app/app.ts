@@ -138,9 +138,9 @@ export class App implements AfterViewInit, OnDestroy {
     }
 
     Promise.all([
-      document.fonts.load('500 25px "__Cormorant_Infant_e41b6c"'),
-      document.fonts.load('500 50px "__snellRoundhand_2893b4"'),
-      document.fonts.load('500 18px "__Cormorant_Garamond_c54468"'),
+      document.fonts.load('500 25px "Cormorant Infant Local"', 'Ви запрошені'),
+      document.fonts.load('500 50px "Snell Roundhand"', 'Валентина та Назар'),
+      document.fonts.load('500 18px "Cormorant Garamond Local"', 'Цей день особливий'),
     ]).finally(() => {
       this.fontsReady = true;
     });
