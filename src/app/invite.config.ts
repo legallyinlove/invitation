@@ -51,9 +51,7 @@
   dressCode: {
     title: string;
     text: string;
-    colors: string[];
     paletteImages: string[];
-    paletteHint: string;
   };
   wishes: {
     title: string;
@@ -91,7 +89,6 @@
     secondLine: string;
     noteFirstLine: string;
     noteSecondLine: string;
-    note: string;
   };
 }
 
@@ -165,9 +162,7 @@ export const inviteConfig: InviteConfig = {
   dressCode: {
     title: 'Дрес-код',
     text: 'Кожен гість у своєму образі має право використати наступні кольори:',
-    colors: ['#010e30', '#566247', '#a9b298', '#d6dec5', '#24140f', '#4a2d20', '#9c8b78', '#ead8c4'],
     paletteImages: ['oct1.webp', 'oct2.webp', 'oct3.webp', 'oct4.webp', 'oct5.webp', 'oct6.webp', 'oct7.webp', 'oct8.webp'],
-    paletteHint: '',
   },
   wishes: {
     title: 'Декілька важливих правил',
@@ -213,6 +208,5 @@ export const inviteConfig: InviteConfig = {
     secondLine: 'Валентина та Назар',
     noteFirstLine: 'Ви особливий гість для нас!',
     noteSecondLine: 'До зустрічі!',
-    note: 'Ви особливий гість для нас! До зустрічі!',
   },
 };

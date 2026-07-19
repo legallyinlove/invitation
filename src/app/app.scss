@@ -763,63 +763,6 @@ a {
   margin-left: 0;
 }
 
-.gold-text {
-  margin: 30px auto 0;
-  color: var(--gold);
-  font-family: var(--fontCormorantGaramond);
-  font-size: 20px;
-  line-height: 22px;
-  text-align: center;
-}
-
-.gold-text--spaced {
-  margin-top: 40px;
-}
-
-.dress-grid {
-  position: relative;
-  height: 500.76px;
-  margin: 20px 17px 0;
-}
-
-.dress-grid img {
-  position: absolute;
-  width: 124.49px;
-  height: auto;
-}
-
-.dress-grid img:nth-child(1) {
-  position: relative;
-  z-index: 1;
-}
-
-.dress-grid img:nth-child(2) {
-  top: 25px;
-  left: 112.89px;
-  z-index: 10;
-}
-
-.dress-grid img:nth-child(3) {
-  top: 0;
-  right: 0;
-}
-
-.dress-grid img:nth-child(4) {
-  bottom: 0;
-  left: 0;
-}
-
-.dress-grid img:nth-child(5) {
-  bottom: 13px;
-  left: 102.89px;
-  z-index: 2;
-}
-
-.dress-grid img:nth-child(6) {
-  right: 0;
-  bottom: 0;
-}
-
 .rings-art {
   display: flex;
   width: 200px;
@@ -1050,50 +993,6 @@ a {
 .reveal--visible {
   opacity: 1;
   transform: translateY(0) scale(1);
-}
-
-.dress-grid img.reveal:nth-child(1) {
-  opacity: 0;
-  transform: translateX(-50px) translateY(-50px);
-}
-
-.dress-grid img.reveal:nth-child(2) {
-  opacity: 0;
-  transform: scale(0.6);
-}
-
-.dress-grid img.reveal:nth-child(3) {
-  opacity: 0;
-  transform: translateX(50px) translateY(-50px);
-}
-
-.dress-grid img.reveal:nth-child(4) {
-  opacity: 0;
-  transform: translateX(-50px) translateY(50px);
-}
-
-.dress-grid img.reveal:nth-child(5) {
-  opacity: 0;
-  transform: scale(0.6);
-}
-
-.dress-grid img.reveal:nth-child(6) {
-  opacity: 0;
-  transform: translateX(50px) translateY(50px);
-}
-
-.dress-grid img.reveal--visible:nth-child(1),
-.dress-grid img.reveal--visible:nth-child(3),
-.dress-grid img.reveal--visible:nth-child(4),
-.dress-grid img.reveal--visible:nth-child(6) {
-  opacity: 1;
-  transform: translateX(0) translateY(0);
-}
-
-.dress-grid img.reveal--visible:nth-child(2),
-.dress-grid img.reveal--visible:nth-child(5) {
-  opacity: 1;
-  transform: scale(1);
 }
 
 @keyframes heartPulse {

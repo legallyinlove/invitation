@@ -1,23 +1,6 @@
-/* Handwritten fonts */
-@font-face {
-  font-family: "Alistair Signature";
-  src: url("/assets/fonts/alistair-signature.ttf") format("truetype");
-  font-weight: 500;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: "Anastasia Script";
-  src: url("/assets/fonts/anastasia-script.ttf") format("truetype");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 @font-face {
   font-family: "Snell Roundhand";
-  src: url("/assets/fonts/snell-roundhand.ttf") format("truetype");
+  src: url("../assets/fonts/snell-roundhand.ttf") format("truetype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -26,7 +9,7 @@
 /* Montserrat variable */
 @font-face {
   font-family: "Montserrat Local";
-  src: url("/assets/fonts/montserrat-latin.woff2") format("woff2");
+  src: url("../assets/fonts/montserrat-latin.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -38,7 +21,7 @@
 
 @font-face {
   font-family: "Montserrat Local";
-  src: url("/assets/fonts/montserrat-cyrillic.woff2") format("woff2");
+  src: url("../assets/fonts/montserrat-cyrillic.woff2") format("woff2");
   font-weight: 100 900;
   font-style: normal;
   font-display: swap;
@@ -48,19 +31,10 @@
     U+20B4;
 }
 
-/* The downloaded Playfair Display subset contains Latin glyphs only. */
-@font-face {
-  font-family: "Playfair Display Local";
-  src: url("/assets/fonts/playfair-display-latin.woff2") format("woff2");
-  font-weight: 400 900;
-  font-style: normal;
-  font-display: swap;
-}
-
 /* Cormorant Garamond 500 */
 @font-face {
   font-family: "Cormorant Garamond Local";
-  src: url("/assets/fonts/cormorant-garamond-500-latin.woff2") format("woff2");
+  src: url("../assets/fonts/cormorant-garamond-500-latin.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -72,7 +46,7 @@
 
 @font-face {
   font-family: "Cormorant Garamond Local";
-  src: url("/assets/fonts/cormorant-garamond-500-cyrillic.woff2") format("woff2");
+  src: url("../assets/fonts/cormorant-garamond-500-cyrillic.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -85,7 +59,7 @@
 /* Cormorant Infant 500 */
 @font-face {
   font-family: "Cormorant Infant Local";
-  src: url("/assets/fonts/cormorant-infant-500-latin.woff2") format("woff2");
+  src: url("../assets/fonts/cormorant-infant-500-latin.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -97,7 +71,7 @@
 
 @font-face {
   font-family: "Cormorant Infant Local";
-  src: url("/assets/fonts/cormorant-infant-500-cyrillic.woff2") format("woff2");
+  src: url("../assets/fonts/cormorant-infant-500-cyrillic.woff2") format("woff2");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
@@ -110,7 +84,7 @@
 /* Cormorant Infant 600 */
 @font-face {
   font-family: "Cormorant Infant Local";
-  src: url("/assets/fonts/cormorant-infant-600-latin.woff2") format("woff2");
+  src: url("../assets/fonts/cormorant-infant-600-latin.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -122,7 +96,7 @@
 
 @font-face {
   font-family: "Cormorant Infant Local";
-  src: url("/assets/fonts/cormorant-infant-600-cyrillic.woff2") format("woff2");
+  src: url("../assets/fonts/cormorant-infant-600-cyrillic.woff2") format("woff2");
   font-weight: 600;
   font-style: normal;
   font-display: swap;
@@ -132,23 +106,10 @@
     U+20B4;
 }
 
-/* The downloaded Raleway subset contains Latin glyphs only. */
-@font-face {
-  font-family: "Raleway Local";
-  src: url("/assets/fonts/raleway-latin.woff2") format("woff2");
-  font-weight: 100 900;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
-  --fontAlistairSignature: "Alistair Signature", cursive;
-  --fontAnastasiaScript: "Anastasia Script", cursive;
   --fontSnellRoundhand: "Snell Roundhand", cursive;
   --fontCormorantGaramond: "Cormorant Garamond Local", Georgia, serif;
   --fontCormorantInfant: "Cormorant Infant Local", Georgia, serif;
   --fontCormorantInfant600: "Cormorant Infant Local", Georgia, serif;
   --fontFamilyMontserrat: "Montserrat Local", Arial, sans-serif;
-  --fontPlayfairDisplay: "Playfair Display Local", Georgia, serif;
-  --fontRaleway: "Raleway Local", Arial, sans-serif;
 }
