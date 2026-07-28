@@ -304,8 +304,9 @@ a {
   display: block;
   width: 230px;
   height: 230px;
-  margin: -70px auto -10px;
+  margin: -64px auto -16px;
   background: var(--deep-green);
+  clip-path: inset(0 8px);
 }
 
 .couple-image {
