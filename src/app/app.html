@@ -1,5 +1,43 @@
 ﻿<audio #audioRef [src]="invite.music" preload="auto" loop></audio>
 
+<section
+  class="intro-video"
+  [class.intro-video--preparing]="introVideoPreparing"
+  [class.intro-video--visible]="introVideoVisible"
+  [attr.aria-hidden]="introVideoVisible ? null : 'true'"
+  aria-label="Відео запрошення"
+  role="dialog"
+>
+  <video
+    #introVideoRef
+    class="intro-video__media"
+    [src]="invite.introVideo"
+    [attr.tabindex]="introVideoVisible ? 0 : -1"
+    preload="auto"
+    playsinline
+    controls
+    (canplay)="handleIntroVideoCanPlay()"
+    (ended)="finishIntroVideo()"
+    (error)="handleIntroVideoError()"
+  ></video>
+
+  @if (introVideoNeedsPlay) {
+    <button class="intro-video__play" type="button" (click)="playIntroVideoManually()">
+      Відтворити відео
+    </button>
+  }
+
+  <button
+    class="intro-video__close"
+    type="button"
+    [attr.tabindex]="introVideoVisible ? 0 : -1"
+    aria-label="Пропустити відео"
+    (click)="finishIntroVideo()"
+  >
+    Пропустити
+  </button>
+</section>
+
 <main class="invite-shell" [class.invite-shell--opened]="opened" [class.invite-shell--fonts-ready]="fontsReady">
   <section class="envelope-screen" [class.envelope-screen--opened]="opened" aria-label="Відкрити запрошення">
     <div class="envelope-copy">

@@ -9,10 +9,14 @@ import { inviteConfig } from './invite.config';
 })
 export class App implements AfterViewInit, OnDestroy {
   @ViewChild('audioRef') private audioRef?: ElementRef<HTMLAudioElement>;
+  @ViewChild('introVideoRef') private introVideoRef?: ElementRef<HTMLVideoElement>;
 
   protected readonly invite = inviteConfig;
   protected readonly weekDays = ['ПН', 'ВТ', 'СР', 'ЧТ', 'ПТ', 'СБ', 'НД'];
   protected opened = false;
+  protected introVideoPreparing = false;
+  protected introVideoVisible = false;
+  protected introVideoNeedsPlay = false;
   protected isMuted = false;
   protected fontsReady = false;
   protected visibleElements = new Set<string>();
@@ -25,6 +29,10 @@ export class App implements AfterViewInit, OnDestroy {
 
   private observer?: IntersectionObserver;
   private timerId?: number;
+  private introVideoTimerId?: number;
+  private introVideoCompleted = false;
+  private introVideoDelayCompleted = false;
+  private introVideoReady = false;
 
   constructor() {
     this.updateCountdown();
@@ -44,20 +52,75 @@ export class App implements AfterViewInit, OnDestroy {
     if (this.timerId) {
       window.clearInterval(this.timerId);
     }
+    if (this.introVideoTimerId) {
+      window.clearTimeout(this.introVideoTimerId);
+    }
+    this.introVideoRef?.nativeElement.pause();
   }
 
   protected openInvite(): void {
+    if (this.opened) {
+      return;
+    }
+
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
     this.opened = true;
-    this.setScrollLock(false);
+    this.introVideoCompleted = false;
+    this.introVideoDelayCompleted = false;
+    this.introVideoPreparing = true;
+    this.setScrollLock(true);
+    this.primeIntroVideo();
 
-    const audio = this.audioRef?.nativeElement;
-    if (audio) {
-      audio.volume = 0.55;
-      audio.play().catch(() => {
-        this.isMuted = true;
-      });
+    this.introVideoTimerId = window.setTimeout(() => {
+      this.introVideoDelayCompleted = true;
+      this.introVideoTimerId = undefined;
+      this.tryShowIntroVideo();
+    }, 2000);
+  }
+
+  protected finishIntroVideo(): void {
+    if (!this.opened || this.introVideoCompleted) {
+      return;
     }
+
+    this.introVideoCompleted = true;
+    this.introVideoPreparing = false;
+    this.introVideoVisible = false;
+    this.introVideoNeedsPlay = false;
+
+    if (this.introVideoTimerId) {
+      window.clearTimeout(this.introVideoTimerId);
+      this.introVideoTimerId = undefined;
+    }
+
+    this.introVideoRef?.nativeElement.pause();
+    this.setScrollLock(false);
+    this.startMusic();
+  }
+
+  protected playIntroVideoManually(): void {
+    const video = this.introVideoRef?.nativeElement;
+    if (!video) {
+      this.finishIntroVideo();
+      return;
+    }
+
+    this.introVideoNeedsPlay = false;
+    video.muted = false;
+    video.play().catch(() => {
+      this.introVideoNeedsPlay = true;
+    });
+  }
+
+  protected handleIntroVideoError(): void {
+    if (this.opened) {
+      this.finishIntroVideo();
+    }
+  }
+
+  protected handleIntroVideoCanPlay(): void {
+    this.introVideoReady = true;
+    this.tryShowIntroVideo();
   }
 
   protected toggleMusic(): void {
@@ -85,6 +148,64 @@ export class App implements AfterViewInit, OnDestroy {
 
   protected isVisible(id: string): boolean {
     return this.visibleElements.has(id);
+  }
+
+  private primeIntroVideo(): void {
+    const video = this.introVideoRef?.nativeElement;
+    if (!video) {
+      return;
+    }
+
+    video.currentTime = 0;
+    this.introVideoReady = video.readyState >= HTMLMediaElement.HAVE_FUTURE_DATA;
+    video.muted = false;
+    video.play().then(() => {
+      if (!this.introVideoVisible) {
+        video.pause();
+        video.currentTime = 0;
+      }
+    }).catch(() => {
+      // The visible playback attempt provides a manual fallback if autoplay is blocked.
+    });
+  }
+
+  private tryShowIntroVideo(): void {
+    if (
+      this.introVideoCompleted
+      || this.introVideoVisible
+      || !this.introVideoDelayCompleted
+      || !this.introVideoReady
+    ) {
+      return;
+    }
+
+    const video = this.introVideoRef?.nativeElement;
+    if (!video) {
+      this.finishIntroVideo();
+      return;
+    }
+
+    this.introVideoPreparing = false;
+    this.introVideoVisible = true;
+    video.currentTime = 0;
+    video.muted = false;
+    video.play().catch(() => {
+      this.introVideoNeedsPlay = true;
+    });
+  }
+
+  private startMusic(): void {
+    const audio = this.audioRef?.nativeElement;
+    if (!audio) {
+      return;
+    }
+
+    audio.volume = 0.55;
+    audio.play().then(() => {
+      this.isMuted = false;
+    }).catch(() => {
+      this.isMuted = true;
+    });
   }
 
   private createRevealObserver(): void {

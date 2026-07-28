@@ -1,6 +1,7 @@
 ﻿export interface InviteConfig {
   assetsBase: string;
   music: string;
+  introVideo: string;
   icon: string;
   couple: {
     image?: string;
@@ -102,6 +103,7 @@ const originalSvg = (fileName: string) => asset(`original-svg/${fileName}`);
 export const inviteConfig: InviteConfig = {
   assetsBase: 'assets/invite',
   music: asset('Музика_для_сайту.mp3'),
+  introVideo: originalSvg('IMG_3285.MP4'),
   icon: originalSvg('Gemini_Generated_Image_wu260nwu260nwu26.svg'),
   couple: {
     image: originalSvg('legally-in-love.jpg'),
