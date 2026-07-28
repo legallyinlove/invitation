@@ -97,7 +97,7 @@ const originalSvg = (fileName: string) => asset(`original-svg/${fileName}`);
 
 export const inviteConfig: InviteConfig = {
   assetsBase: 'assets/invite',
-  music: asset('October.mp3'),
+  music: asset('Музика_для_сайту.mp3'),
   icon: originalSvg('Gemini_Generated_Image_wu260nwu260nwu26.svg'),
   couple: {
     image: originalSvg('legally-in-love.jpg'),
@@ -132,7 +132,7 @@ export const inviteConfig: InviteConfig = {
   location: {
     title: 'Локація',
     name: 'Ресторан «Рафаель»',
-    address: 'вулиця Івана Гонти, 1а, Зубра, Львівська область',
+    address: 'Львівська область, с. Зубра, вул. І Гонти, 1А',
     mapLabel: 'показати на карті',
     mapUrl: 'https://maps.app.goo.gl/rZ5xUzxnHExDatnL7',
     art: originalSvg('Gemini_Generated_Image_v36b0yv36b0yv36b.svg'),
@@ -149,7 +149,7 @@ export const inviteConfig: InviteConfig = {
       },
       { time: '14:00', label: 'Церемонія', icon: originalSvg('timing-ceremony.svg') },
       { time: '15:30', label: 'Банкет', icon: originalSvg('timing-banquet.svg') },
-      { time: '20:00', label: 'Торт', icon: originalSvg('timing-cake.svg') },
+      { time: '21:00', label: 'Торт', icon: originalSvg('timing-cake.svg') },
       {
         time: '23:00',
         label: 'Завершення',
@@ -160,7 +160,7 @@ export const inviteConfig: InviteConfig = {
     note: '«Любов – це коли де-факто Вас двоє, а де-юре – Ви одне ціле.»',
   },
   dressCode: {
-    title: 'Дрес-код',
+    title: 'Дрескод',
     text: 'Кожен гість у своєму образі має право використати наступні кольори:',
     paletteImages: ['oct1.webp', 'oct2.webp', 'oct3.webp', 'oct4.webp', 'oct5.webp', 'oct6.webp', 'oct7.webp', 'oct8.webp'],
   },
@@ -173,13 +173,13 @@ export const inviteConfig: InviteConfig = {
       {
         text: 'Правила створені для того, щоб їх порушувати, тим більше, коли на святі стільки юристів. 23:00 – це не межа Ваших можливостей.',
         details: {
-          text: 'P.S. Для комфортного продовження свята, рекомендуємо заздалегідь подбати про нічний транспорт додому або забронювати номери в готелі:',
+          text: 'P.S. Для комфортного провдовження свята рекомендуємо заздалегідь забронювати номер в готелі:',
           phone: '+38 (067) 672 55 42',
           phoneUrl: 'tel:+380676725542',
         },
       },
       {
-        text: 'Будь ласка, заповніть анкету за посиланням - це значно полегшить нам організацію і зробить свято ще затишнішим',
+        text: 'Будь ласка, заповніть анкету за посиланням - це значно полегшить нам організацію і зробить свято ще затишнішим.',
       },
     ],
   },
@@ -191,7 +191,7 @@ export const inviteConfig: InviteConfig = {
   },
   telegram: {
     text: 'Переходьте до спільного чату в Telegram – там буде багато цікавого до, під час та після весілля!',
-    buttonUrl: 'https://youtu.be/M_CaAD8HhSA?si=xbdHSEqxPr8BbrfL&t=170',
+    buttonUrl: 'https://t.me/+FpYfZ_haLpsyYzRi',
   },
   countdown: {
     title: 'Ми скажемо "так" через...',
