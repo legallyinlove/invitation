@@ -51,7 +51,11 @@
   dressCode: {
     title: string;
     text: string;
-    paletteImages: string[];
+    paletteImages: Array<{
+      src: string;
+      label: string;
+      note?: string;
+    }>;
   };
   wishes: {
     title: string;
@@ -144,7 +148,7 @@ export const inviteConfig: InviteConfig = {
       {
         time: '12:00',
         label: 'Вінчання',
-        description: 'Церква Архистратига Михаїла (м. Львів, вул. Винниченка, 22)',
+        description: 'Церква Архистратига Михаїла\n(м. Львів, вул. Винниченка, 22)',
         icon: originalSvg('Gemini_Generated_Image_3a5fj63a5fj63a5f.svg'),
       },
       { time: '14:00', label: 'Церемонія', icon: originalSvg('timing-ceremony.svg') },
@@ -162,7 +166,13 @@ export const inviteConfig: InviteConfig = {
   dressCode: {
     title: 'Дрескод',
     text: 'Кожен гість у своєму образі має право використати наступні кольори:',
-    paletteImages: ['oct1.webp', 'oct2.webp', 'oct3.webp', 'oct4.webp', 'oct5.webp', 'oct6.webp', 'oct7.webp', 'oct8.webp'],
+    paletteImages: [
+      { src: originalSvg('dress-1.png'), label: 'Темно-синій' },
+      { src: originalSvg('dress-2.png'), label: 'Голубий' },
+      { src: originalSvg('dress-3.png'), label: 'Тауп', note: 'бежевий' },
+      { src: originalSvg('dress-4.png'), label: 'Шампань' },
+      { src: originalSvg('dress-5.png'), label: 'Мокко' },
+    ],
   },
   wishes: {
     title: 'Декілька важливих правил',

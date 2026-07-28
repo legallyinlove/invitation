@@ -127,8 +127,16 @@
       <h2 class="script-title reveal" data-reveal="dress-title" [class.reveal--visible]="isVisible('dress-title')">{{ invite.dressCode.title }}</h2>
       <p class="section-text">{{ invite.dressCode.text }}</p>
       <div class="palette" aria-label="Палітра дрес-коду">
-        @for (image of invite.dressCode.paletteImages; track image) {
-          <img [src]="asset(image)" alt="">
+        @for (item of invite.dressCode.paletteImages; track item.src) {
+          <figure class="palette-item">
+            <img [src]="item.src" [alt]="item.label">
+            <figcaption>
+              <span>{{ item.label }}</span>
+              @if (item.note) {
+                <small>({{ item.note }})</small>
+              }
+            </figcaption>
+          </figure>
         }
       </div>
       <img class="rings-art" [src]="asset('original-svg/rings.svg')" alt="">
