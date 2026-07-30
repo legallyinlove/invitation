@@ -103,7 +103,7 @@ const originalSvg = (fileName: string) => asset(`original-svg/${fileName}`);
 export const inviteConfig: InviteConfig = {
   assetsBase: 'assets/invite',
   music: asset('Музика_для_сайту.mp3'),
-  introVideo: originalSvg('IMG_3285.MP4'),
+  introVideo: asset('Weeding_Video.mov'),
   icon: originalSvg('Gemini_Generated_Image_wu260nwu260nwu26.svg'),
   couple: {
     image: originalSvg('legally-in-love.jpg'),
@@ -198,7 +198,7 @@ export const inviteConfig: InviteConfig = {
   rsvp: {
     title: '',
     text: '',
-    button: 'заповнити',
+    button: 'Заповнити',
     formUrl: 'https://forms.gle/uJwziwwvxJEevgQP9',
   },
   telegram: {
