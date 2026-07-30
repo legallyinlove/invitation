@@ -1,12 +1,12 @@
 {
   "name": "wedding-invite",
-  "homepage": "https://LanchevychMaxym.github.io/WeddingInvite",
+  "homepage": "https://legallyinlove.github.io/invitation/",
   "version": "1.0.0",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
     "build": "ng build",
-    "build:gh-pages": "ng build --base-href /WeddingInvite/",
+    "build:gh-pages": "ng build --base-href /invitation/",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
     "predeploy": "npm run build:gh-pages",
