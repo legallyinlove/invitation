@@ -1138,3 +1138,10 @@ a {
     width: 100%;
   }
 }
+
+@media (min-width: 521px) and (min-height: 958px) and (max-height: 1299px) {
+  .envelope-copy {
+    // Keep the copy safely below the envelope's upper horizontal edge.
+    top: calc(58.91vh - 465.64px);
+  }
+}
