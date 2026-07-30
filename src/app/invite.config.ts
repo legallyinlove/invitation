@@ -140,7 +140,7 @@ export const inviteConfig: InviteConfig = {
     name: 'Ресторан «Рафаель»',
     address: 'Львівська область, с. Зубра, вул. І Гонти, 1А',
     mapLabel: 'показати на карті',
-    mapUrl: 'https://maps.app.goo.gl/rZ5xUzxnHExDatnL7',
+    mapUrl: 'https://www.google.com.ua/maps/place/%D0%A0%D0%B0%D1%84%D0%B0%D0%B5%D0%BB%D1%8C/@49.7659173,24.0569968,16z/data=!4m9!3m8!1s0x473ae8f105e700ef:0x81fde5d1d2e87b00!5m2!4m1!1i2!8m2!3d49.7663842!4d24.0580033!16s%2Fg%2F1vq9l1f6?entry=ttu&g_ep=EgoyMDI2MDcyNy4wIKXMDSoASAFQAw%3D%3D',
     art: originalSvg('Gemini_Generated_Image_v36b0yv36b0yv36b.svg'),
   },
   timing: {
